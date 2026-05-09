@@ -16,7 +16,7 @@ from ts_benchmark.baselines.utils import (
     forecasting_data_provider,
     train_val_split,
     get_time_mark,
-    DBLoss
+    AdaLoss
 )
 from ts_benchmark.models.model_base import ModelBase, BatchMaker
 from ts_benchmark.utils.data_processing import split_time
@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 # Default hyper parameters
 DEFAULT_HYPER_PARAMS = {
     "use_amp": 0,
-    "loss": "DBLoss",
+    "loss": "AdaLoss",
     "batch_size": 256,
     "lradj": "type3",
     "lr": 0.0001,
@@ -133,8 +133,8 @@ class DeepForecastingModelBase(ModelBase):
             criterion = nn.MSELoss()
         elif self.config.loss == "MAE":
             criterion = nn.L1Loss()
-        elif self.config.loss == "DBLoss":
-            criterion = DBLoss(self.config.alpha, self.config.beta, 0.2, self.config.enc_in, True)
+        elif self.config.loss == "AdaLoss":
+            criterion = AdaLoss(self.config.alpha, self.config.beta, 0.2, self.config.enc_in, True)
         else:
             criterion = nn.HuberLoss(delta=0.5)
         optimizer = optim.Adam(

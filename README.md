@@ -32,7 +32,7 @@ You can obtained the well pre-processed datasets from [Google Drive](https://dri
 
 3. Train and evaluate model:
 
-- To see the model structure of AdaLoss, [click here](https://github.com/qiu69/AdaLoss/blob/main/ts_benchmark/baselines/utils.py).
+- To see the model structure of AdaLoss, [click here](https://github.com/decisionintelligence/AdaLoss/blob/main/ts_benchmark/baselines/utils.py).
 
 - We provide the experiment scripts for all benchmarks under the folder `./scripts/multivariate_forecast`. For example you can reproduce a experiment result as the following:
 
@@ -44,7 +44,7 @@ sh ./scripts/multivariate_forecast/ETTh1_script/DLinear.sh
 
 ## Results
 
-Long-term multivariate forecasting results. The table reports MSE and MAE for different forecasting horizons F ∈ {96, 192, 336, 720}. The parameters for the baselines are kept consistent with those of [TFB](https://github.com/decisionintelligence/TFB). The better results are highlighted in bold.
+Long-term multivariate forecasting results. The table reports four metrics for different forecasting horizons F ∈ {96, 192, 336, 720}. The parameters for the baselines are kept consistent with those of [TFB](https://github.com/decisionintelligence/TFB). The better results are highlighted in bold.
 
 <div align="center">
 <img alt="Logo" src="docs/figures/exp.png" width="100%"/>

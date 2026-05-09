@@ -184,7 +184,7 @@ class DECOMP(nn.Module):
         return res, moving_average
 
 
-class DBLoss(nn.Module):
+class AdaLoss(nn.Module):
     def __init__(self, alpha=0.2, beta=0.5, tau_init=0.2,
                  num_channels=7, use_auto_ema_alpha=True):
         super().__init__()
